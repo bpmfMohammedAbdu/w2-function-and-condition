@@ -35,6 +35,7 @@ function myFifth(array2){
     console.log(array2[0]+array2[1]);
 }
 myFifth([2,3]);
+// Question 6
 // Write a function that takes an integer minutes and converts it to seconds.
 function convert(min){
     if(!isNaN(min)){
@@ -46,3 +47,10 @@ function convert(min){
     }
 }
 convert(2);
+// Question 7
+// Create a function that takes a number as an argument, increments the number by +1 and returns the result.
+function incNumber(num){
+    let result= (isNaN(num)) ?  "invalid input": num+1;
+    return result;
+}
+incNumber(3);
