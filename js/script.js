@@ -51,6 +51,12 @@ convert(2);
 // Create a function that takes a number as an argument, increments the number by +1 and returns the result.
 function incNumber(num){
     let result= (isNaN(num)) ?  "invalid input": num+1;
-    return result;
+    return result
 }
 incNumber(3);
+// Question 8
+// Write a function that takes the base and height of a triangle and return its area.
+function areaTrinangle(base,height){
+    return (isNaN(base) || isNaN(height)) ? "invalid input" :(base*height)/2;
+}
+console.log(areaTrinangle(3, 2));
