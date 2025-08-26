@@ -94,7 +94,7 @@ function isSameNum(num1,num2){
     }
 }
 // function isSameNum(num1,num2){
-//     return (isNaN(num1)&&isNaN(num2)) 
+//     return (isNaN(num1)||isNaN(num2)) 
 //     ?"invalid input"
 //     :(num1===num2 );
 // }
@@ -102,3 +102,18 @@ console.log(isSameNum(4, 8));
 console.log(isSameNum(4, 4));
 console.log(isSameNum(2, "2"));
 console.log(isSameNum("a", 5));
+// Question 12
+// ● Create a function that takes an integer and returns true if it's divisible by 100, otherwise
+// return false.
+function divisible(num3){
+    return (isNaN(num3))
+    ?"invalid input"
+    :((num3%100==0)
+    ?"true"
+    :"false"
+    )
+}
+console.log(divisible(1));
+console.log(divisible(100));
+console.log(divisible("a100"));
+console.log(divisible(1000));
