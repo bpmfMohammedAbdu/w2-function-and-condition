@@ -60,3 +60,45 @@ function areaTrinangle(base,height){
     return (isNaN(base) || isNaN(height)) ? "invalid input" :(base*height)/2;
 }
 console.log(areaTrinangle(3, 2));
+// Question 9
+// ● Create a function that returns the total number of legs of all the animals. In this challenge, a
+// farmer is asking you to tell him how many legs can be counted among all his animals. The
+// farmer breeds three species (chickens = 2 legs, cows =, 4 legs, pigs = 4 legs). Remember: the
+// farmer wants to know the total number of legs and not the total number of animals.
+function animals(chickens, cows, pigs) {
+    let totalLeag = chickens*2 + cows*4 + pigs*4;
+    return totalLeag;
+}
+console.log(animals(2, 3, 5));
+console.log(animals(1, 2, 3));
+console.log(animals(5, 2, 8));
+// Question 10
+// ● Create a function that takes an array containing only TWO numbers as a parameter and returns
+// a value that is 3 times the first element of the array.
+function multipleArray(marray){
+    return marray[0]*3;
+}
+// Question 11
+// ● Create a function that returns true when num1 is equal to num2; otherwise return false
+function isSameNum(num1,num2){
+    if(isNaN(num1)||isNaN(num2)){
+        return "invalid input";
+    }
+    else{
+        if (num1===num2) {
+            return "true";
+        }
+        else{
+            return "false";
+        }
+    }
+}
+// function isSameNum(num1,num2){
+//     return (isNaN(num1)&&isNaN(num2)) 
+//     ?"invalid input"
+//     :(num1===num2 );
+// }
+console.log(isSameNum(4, 8));
+console.log(isSameNum(4, 4));
+console.log(isSameNum(2, "2"));
+console.log(isSameNum("a", 5));
