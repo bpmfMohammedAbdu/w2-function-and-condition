@@ -117,3 +117,24 @@ console.log(divisible(1));
 console.log(divisible(100));
 console.log(divisible("a100"));
 console.log(divisible(1000));
+// Question 13
+// ● Create a function that takes a number as an argument and returns "even" for even numbers
+// and "odd" for odd numbers.
+function isEvenOrOdd(num4){
+    if (isNaN(num4)) {
+        return "invalid input";
+    }
+    else{
+        if(num4%2==0){
+            return "Even";
+        }
+        else {
+            return "odd";
+        }
+
+    }
+}
+console.log(isEvenOrOdd(3));
+console.log(isEvenOrOdd(4)); 
+console.log(isEvenOrOdd(7)); 
+console.log(isEvenOrOdd("a"));
