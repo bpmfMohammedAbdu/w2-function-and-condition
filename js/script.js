@@ -138,3 +138,47 @@ console.log(isEvenOrOdd(3));
 console.log(isEvenOrOdd(4)); 
 console.log(isEvenOrOdd(7)); 
 console.log(isEvenOrOdd("a"));
+// Question 14
+// ● Create a function that returns
+// ○ “Invalid score” if score is above 100 or score is a negative number
+// ○ “Grade A” when score is between 90 and 100 (both 90 and 100 included)
+// ○ “Grade B” when score is between 80 and 89 (both 80 and 89 included)
+// ○ “Grade C” for any score below 79
+function gradeChecker(score){
+    if (isNaN(score)){
+        return "invalid input ";
+    }
+    if (score > 100 || score < 0) {
+        return "Invalid score";
+    }
+    if(score>=90){
+        return "Grade A";
+    }
+    else if(score>=80){
+        return "Grade B";
+    }
+    else{
+        return "Grade C";
+    }
+    
+}
+console.log(gradeChecker(95)); 
+console.log(gradeChecker(90)); 
+console.log(gradeChecker(85)); 
+console.log(gradeChecker(80)); 
+console.log(gradeChecker(70)); 
+console.log(gradeChecker(0)); 
+console.log(gradeChecker(150)); 
+console.log(gradeChecker(-10)); 
+console.log(gradeChecker("hi"));
+// Question 15
+// Fix the code in the code tab to pass this challenge (only syntax errors). Look at the examples below to get an idea of what the function should do.
+function cubes(cube){
+    return isNaN(cube)
+    ?"invalid input"
+    :cube*cube*cube;
+}
+console.log(cubes(3));
+console.log(cubes(9));
+console.log(cubes("3"));
+console.log(cubes("a"));
