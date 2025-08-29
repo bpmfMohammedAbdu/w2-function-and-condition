@@ -182,3 +182,60 @@ console.log(cubes(3));
 console.log(cubes(9));
 console.log(cubes("3"));
 console.log(cubes("a"));
+// Question 16
+//creat a function named calculateDiscount with two parameter: totalAmount,customerType
+//*function calculateDiscount(totalAmount,customerType)
+//creat afunction the input is valid or not 
+//return "invalid input "
+//otherwise creat additonal condition to geat Discount 
+//customerType ==="regular" ,customerType ==="premium", customerType ==="vip"
+//inside that condition creat related condition
+//for Regular totalAmount>=100 get 5% discoundt  totalAmount<100 no discount
+//for Premium totalAmount>=50 get 10% discoundt  totalAmount<50 5% discount
+//for VIP totalAmount>=200 get 20% discoundt  totalAmount <200 15% discount
+//else return "no other customerType"
+// function calculateDiscount(totalAmount, customerType) {
+
+function calculateDiscount(totalAmount, customerType) {
+    if (isNaN(totalAmount) || typeof customerType !== "string" || 
+        (customerType.toLowerCase() !== "regular" && 
+         customerType.toLowerCase() !== "premium" && 
+         customerType.toLowerCase() !== "vip")) {
+        return "invalid input";
+    }
+    customerType = customerType.toLowerCase();
+    if (totalAmount < 0) {
+        return "invalid input";
+    }
+    if (customerType === "regular") {
+        if (totalAmount >= 100) {
+            return totalAmount - (totalAmount * 5) / 100; 
+        } else {
+            return totalAmount; 
+        }
+    } else if (customerType === "premium") {
+        if (totalAmount >= 50) {
+            return totalAmount - (totalAmount * 10) / 100; 
+        } else {
+            return totalAmount - (totalAmount * 5) / 100; 
+        }
+    } else if (customerType === "vip") {
+        if (totalAmount >= 200) {
+            return totalAmount - (totalAmount * 20) / 100; 
+        } else {
+            return totalAmount - (totalAmount * 15) / 100;
+        }
+    } else {
+        return "no other customerType";
+    }
+}
+
+console.log(calculateDiscount(150, "regular")); 
+console.log(calculateDiscount(60, "premium")); 
+console.log(calculateDiscount(250, "vip")); 
+console.log(calculateDiscount(80, "regular")); 
+console.log(calculateDiscount(30, "premium")); 
+console.log(calculateDiscount(100, "vip")); 
+console.log(calculateDiscount(100, "invalid"));
+console.log(calculateDiscount(-50, "regular")); 
+console.log(calculateDiscount(100, 123)); 
