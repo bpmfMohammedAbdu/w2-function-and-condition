@@ -238,4 +238,66 @@ console.log(calculateDiscount(30, "premium"));
 console.log(calculateDiscount(100, "vip")); 
 console.log(calculateDiscount(100, "invalid"));
 console.log(calculateDiscount(-50, "regular")); 
-console.log(calculateDiscount(100, 123)); 
+console.log(calculateDiscount(100, 123));
+// Question 16
+// function restrictAccess(userAge,contentRating){
+//         if(isNaN(userAge) || userAge < 0){
+//             return "invalid age";
+//         }
+//         else(typeof contentRating !== "string" || (contentRating !=="G"&&contentRating !== "PG" && contentRating !=="R"))
+//         {
+//             return "invalid rating";
+//         }
+        
+//         if(isNaN(userAge) || userAge < 0|| typeof contentRating === "string"){
+//              if(contentRating === "G"){
+
+//              }
+//              else if(contentRating === "PG" && userAge>=13 ){
+
+//              }
+//              else if(contentRating === "R" && userAge>=18){
+
+//              }
+//         }
+        
+// }
+//frist creat function named restrictAccess with two parameter:userAge,contentRating;
+//creat condition to checke the input is valid or not 
+//checke the userAge and contentRating is number and string respectivly
+//retrun invalid the parameter is not valid 
+//other wise gone to the next condition 
+//for contentRating "G" userAge is any number >=0
+// for contentRating "PG" userAge is any number >13
+//return true or false 
+//for contentRating "R" userAge is any number >18 
+//othrer wise return "invalid rating"
+// Valid cases 
+function restrictAccess(userAge, contentRating) {
+  if (!isNaN(userAge) && typeof contentRating === "string" && userAge >= 0) {
+    contentRating = contentRating.toLowerCase(); 
+    if (userAge >= 0 && contentRating === "g") {
+      return "true";
+    } else if (userAge >= 13 && contentRating === "pg") {
+      return "true";
+    } else if (userAge >= 18 && contentRating === "r") {
+      return "true";
+    } else if (contentRating === "g" ||contentRating === "pg" ||contentRating === "r") {
+      return "false"; 
+    } else {
+      return "invalid rating"; 
+    }
+  } else {
+    if (isNaN(userAge) || userAge < 0) {
+      return "invalid age";
+    } else {
+      return "invalid rating"; 
+    }
+  }
+}
+console.log(restrictAccess(10, "G")); // true (G allows all ages)
+console.log(restrictAccess(15, "PG")); // true (PG allows age >= 13)
+console.log(restrictAccess(18, "R")); // true (R allows age >= 18)
+console.log(restrictAccess(12, "PG")); // false (PG requires age >= 13)
+console.log(restrictAccess(17, "R")); // false (R requires age >= 18)
+console.log(restrictAccess(0, "G")); // true (G allows all ages, including 0)
